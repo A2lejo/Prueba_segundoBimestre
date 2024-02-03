@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class retiros extends JFrame{
+public class retiros{
     private JTextField cantidadRE;
     JPanel retiro;
     private JButton a1Button;
@@ -17,9 +17,10 @@ public class retiros extends JFrame{
     private JButton a0Button;
     private JButton enterButton;
     private JButton menuButton;
+    private JButton corregirButton;
 
-    public retiros(JFrame xd) {
-        cantidadRE.setText("$");
+    public retiros(JFrame xd, double saldo) {
+
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,7 +84,15 @@ public class retiros extends JFrame{
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Operacion realizada");
+                double cantidad = Double.parseDouble(cantidadRE.getText());
+                if (cantidad<=saldo){
+                    double nuevoSaldo = saldo-cantidad;
+                    System.out.println(nuevoSaldo);
+                    JOptionPane.showMessageDialog(null,"Operacion realizada");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"ERROR, cantidad de dinero insuficiente\n Cantidad disponible: "+ saldo);
+                }
             }
         });
         menuButton.addActionListener(new ActionListener() {
@@ -97,5 +106,12 @@ public class retiros extends JFrame{
                 pantallaAnterior.setVisible(true);
             }
         });
+        corregirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cantidadRE.setText("");
+            }
+        });
     }
+
 }

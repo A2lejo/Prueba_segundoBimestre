@@ -12,7 +12,7 @@ public class menu {
     private JRadioButton retiroRadioButton;
     private JRadioButton salirRadioButton;
     private JButton relizarButton;
-
+    public static double saldo=1500;
     public menu(JFrame xd) {
 
         ButtonGroup grupo = new ButtonGroup();
@@ -40,18 +40,19 @@ public class menu {
                 switch (opcion) {
                     case "Saldo":
                         JFrame frame3 = new JFrame("Saldo");
-                        frame3.setContentPane(new vistaSaldo(frame3).saldo);
+                        frame3.setContentPane(new vistaSaldo(frame3, saldo).saldo);
                         /*frame3.setUndecorated(true);*/ /*Se quita por comleto las opciones de cerrar y demás pero no se mueve la pantalla*/
                         frame3.setResizable(false);/*No deja maximizar*/
                         frame3.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE); /*No permite que cierre la ventana*/
                         /*frame3.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);*//*Ni minimiza, ni cierra (No valio xd SOLO NO CIERRA)*/
                         frame3.setSize(500, 500);
+                        System.out.println(saldo);
                         frame3.setVisible(true);
                         xd.dispose();
                         break;
                     case "Retiro":
                         JFrame frame4 = new JFrame("Retiro");
-                        frame4.setContentPane(new retiros(frame4).retiro);
+                        frame4.setContentPane(new retiros(frame4, saldo).retiro);
                         frame4.setResizable(true);
                         frame4.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
                         frame4.setSize(500, 500);
@@ -60,7 +61,7 @@ public class menu {
                         break;
                     case "Deposito":
                         JFrame frame5 = new JFrame("Deposito");
-                        frame5.setContentPane(new retiros(frame5).retiro);
+                        frame5.setContentPane(new depositos(frame5, saldo).deposito);
                         frame5.setResizable(true);
                         frame5.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
                         frame5.setSize(500, 500);
@@ -71,7 +72,6 @@ public class menu {
                         JOptionPane.showMessageDialog(null, "Muchas gracias");
                         xd.dispose();
                         break;
-
                 }
             }
         });
