@@ -18,8 +18,6 @@ public class inicioSesion {
     private JButton ingresarButton;
     private JButton corregirButton;
     public inicioSesion(JFrame xd) {
-
-
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,13 +85,8 @@ public class inicioSesion {
                 String contra = new String(pass.getPassword());
                 String password = "123";
                 if (contra.equals(password)){
-                    JFrame frame2 = new JFrame("Transaccion a realizar");
-                    frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame2.setContentPane(new menu(frame2).Operaciones);
-                    frame2.pack();
-                    frame2.setSize(500,500);
-                    frame2.setVisible(true);
-                    xd.dispose();
+                    Main.framexd.setContentPane(new menu(Main.framexd).Operaciones);
+                    Main.framexd.revalidate();
                 }
                 else {
                     JOptionPane.showMessageDialog(null,"Contraseña incorretca");

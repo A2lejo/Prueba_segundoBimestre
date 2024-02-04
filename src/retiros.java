@@ -19,7 +19,7 @@ public class retiros{
     private JButton menuButton;
     private JButton corregirButton;
 
-    public retiros(JFrame xd, double saldo) {
+    public retiros(JFrame xd) {
 
         a1Button.addActionListener(new ActionListener() {
             @Override
@@ -85,25 +85,22 @@ public class retiros{
             @Override
             public void actionPerformed(ActionEvent e) {
                 double cantidad = Double.parseDouble(cantidadRE.getText());
-                if (cantidad<=saldo){
-                    double nuevoSaldo = saldo-cantidad;
-                    System.out.println(nuevoSaldo);
+                if (cantidad<=menu.saldo){
+                     menu.saldo-=cantidad;
+                    System.out.println();
                     JOptionPane.showMessageDialog(null,"Operacion realizada");
                 }
                 else {
-                    JOptionPane.showMessageDialog(null,"ERROR, cantidad de dinero insuficiente\n Cantidad disponible: "+ saldo);
+                    JOptionPane.showMessageDialog(null,"ERROR, " +
+                            "cantidad de dinero insuficiente\n Cantidad disponible: "+ menu.saldo);
                 }
             }
         });
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xd.dispose();
-                JFrame pantallaAnterior = new JFrame("Transaccion a realizar");
-                pantallaAnterior.setContentPane(new menu(pantallaAnterior).Operaciones);
-                pantallaAnterior.pack();
-                pantallaAnterior.setSize(500,500);
-                pantallaAnterior.setVisible(true);
+                Main.framexd.setContentPane(new menu(Main.framexd).Operaciones);
+                Main.framexd.revalidate();
             }
         });
         corregirButton.addActionListener(new ActionListener() {

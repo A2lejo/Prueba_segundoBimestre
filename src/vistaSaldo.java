@@ -7,18 +7,14 @@ public class vistaSaldo extends JFrame {
     private JButton menuButton;
     private JLabel saldoJL;
 
-    public vistaSaldo(JFrame xd, double Nuevosaldo) {
+    public vistaSaldo(JFrame xd) {
 
-        saldoJL.setText("Saldo: $" + String.valueOf(Nuevosaldo));
+        saldoJL.setText("Saldo: $" + String.valueOf(menu.saldo));
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame pantallaAnterior = new JFrame("Transaccion a realizar");
-                pantallaAnterior.setContentPane(new menu(pantallaAnterior).Operaciones);
-                pantallaAnterior.pack();
-                pantallaAnterior.setSize(500,500);
-                pantallaAnterior.setVisible(true);
-                xd.dispose();
+                Main.framexd.setContentPane(new menu(Main.framexd).Operaciones);
+                Main.framexd.revalidate();
             }
         });
     }
