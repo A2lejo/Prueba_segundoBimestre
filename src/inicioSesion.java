@@ -17,7 +17,11 @@ public class inicioSesion {
     private JButton a0Button;
     private JButton ingresarButton;
     private JButton corregirButton;
-    public inicioSesion(JFrame xd) {
+    private JButton button1;
+    private JButton button2;
+    private JButton salirButton;
+
+    public inicioSesion() {
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,7 +89,7 @@ public class inicioSesion {
                 String contra = new String(pass.getPassword());
                 String password = "123";
                 if (contra.equals(password)){
-                    Main.framexd.setContentPane(new menu(Main.framexd).Operaciones);
+                    Main.framexd.setContentPane(new menu().Operaciones);
                     Main.framexd.revalidate();
                 }
                 else {
@@ -97,6 +101,12 @@ public class inicioSesion {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pass.setText("");
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }

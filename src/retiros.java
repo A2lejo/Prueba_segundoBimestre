@@ -19,7 +19,7 @@ public class retiros{
     private JButton menuButton;
     private JButton corregirButton;
 
-    public retiros(JFrame xd) {
+    public retiros() {
 
         a1Button.addActionListener(new ActionListener() {
             @Override
@@ -85,21 +85,25 @@ public class retiros{
             @Override
             public void actionPerformed(ActionEvent e) {
                 double cantidad = Double.parseDouble(cantidadRE.getText());
-                if (cantidad<=menu.saldo){
-                     menu.saldo-=cantidad;
-                    System.out.println();
-                    JOptionPane.showMessageDialog(null,"Operacion realizada");
+                if (cantidad%10!=0){
+                    JOptionPane.showMessageDialog(null, "Ingrese valores mayores o multiplos de $10");
                 }
-                else {
-                    JOptionPane.showMessageDialog(null,"ERROR, " +
-                            "cantidad de dinero insuficiente\n Cantidad disponible: "+ menu.saldo);
+                else{
+                    if (cantidad<=menu.saldo){
+                        menu.saldo-=cantidad;
+                        JOptionPane.showMessageDialog(null,"Operacion realizada");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"ERROR, " +
+                                "cantidad de dinero insuficiente\n Cantidad disponible: "+ menu.saldo);
+                    }
                 }
             }
         });
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.framexd.setContentPane(new menu(Main.framexd).Operaciones);
+                Main.framexd.setContentPane(new menu().Operaciones);
                 Main.framexd.revalidate();
             }
         });
