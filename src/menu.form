@@ -14,6 +14,7 @@
         </constraints>
         <properties>
           <background color="-1"/>
+          <icon value="punta-de-flecha-del-boton-de-reproduccion.png"/>
           <text value="Saldo"/>
         </properties>
       </component>
@@ -23,6 +24,7 @@
         </constraints>
         <properties>
           <background color="-1"/>
+          <icon value="punta-de-flecha-del-boton-de-reproduccion.png"/>
           <text value="Salir"/>
         </properties>
       </component>
@@ -32,6 +34,7 @@
         </constraints>
         <properties>
           <background color="-1"/>
+          <icon value="punta-de-flecha-del-boton-de-reproduccion.png"/>
           <text value="Retiro"/>
         </properties>
       </component>
@@ -41,6 +44,7 @@
         </constraints>
         <properties>
           <background color="-1"/>
+          <icon value="punta-de-flecha-del-boton-de-reproduccion.png"/>
           <text value="Deposito"/>
         </properties>
       </component>
