@@ -13,8 +13,8 @@ public class vistaSaldo extends JFrame {
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.framexd.setContentPane(new menu().Operaciones);
-                Main.framexd.revalidate();
+                Main.framebase.setContentPane(new menu().Operaciones);
+                Main.framebase.revalidate();
             }
         });
     }

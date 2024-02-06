@@ -11,7 +11,7 @@ public class menu {
     private JRadioButton salirRadioButton;
     private JButton relizarButton;
     private JButton salirButton;
-    static double saldo = 1500000;
+    static double saldo = 1500;
     public menu() {
         ButtonGroup grupo = new ButtonGroup();
         grupo.add(saldoRadioButton);
@@ -39,28 +39,22 @@ public class menu {
                 String opcion = seleccionado.getText();
                 switch (opcion) {
                     case "Saldo":
-                        Main.framexd.setContentPane(new vistaSaldo().saldo);
-                        Main.framexd.revalidate();
+                        Main.framebase.setContentPane(new vistaSaldo().saldo);
+                        Main.framebase.revalidate();
                         break;
                     case "Retiro":
-                        Main.framexd.setContentPane(new retiros().retiro);
-                        Main.framexd.revalidate();
+                        Main.framebase.setContentPane(new retiros().retiro);
+                        Main.framebase.revalidate();
                         break;
                     case "Deposito":
-                        Main.framexd.setContentPane(new depositos().deposito);
-                        Main.framexd.revalidate();
+                        Main.framebase.setContentPane(new depositos().deposito);
+                        Main.framebase.revalidate();
                         break;
                     case "Salir":
                         JOptionPane.showMessageDialog(null, "Muchas gracias");
-                        //xd.dispose();
+                        System.exit(0);
                         break;
                 }
-            }
-        });
-        salirButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
             }
         });
     }

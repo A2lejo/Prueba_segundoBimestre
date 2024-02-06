@@ -89,11 +89,11 @@ public class inicioSesion {
                 String contra = new String(pass.getPassword());
                 String password = "123";
                 if (contra.equals(password)){
-                    Main.framexd.setContentPane(new menu().Operaciones);
-                    Main.framexd.revalidate();
+                    Main.framebase.setContentPane(new menu().Operaciones);
+                    Main.framebase.revalidate();
                 }
                 else {
-                    JOptionPane.showMessageDialog(null,"Contraseña incorretca");
+                    JOptionPane.showMessageDialog(null,"Contraseña incorrecta");
                 }
             }
         });

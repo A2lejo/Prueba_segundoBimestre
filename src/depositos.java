@@ -17,6 +17,7 @@ public class depositos {
     private JButton a0Button;
     private JButton enterButton;
     private JButton menuButton;
+    private JButton corregirButton;
 
     public depositos() {
 
@@ -86,14 +87,21 @@ public class depositos {
             public void actionPerformed(ActionEvent e) {
                 double dinero = Double.parseDouble(cantidadDE.getText());
                 menu.saldo = dinero+menu.saldo;
-                JOptionPane.showMessageDialog(null,"Operacion realizada");
+                JOptionPane.showMessageDialog(null,"Deposito exitoso");
             }
         });
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.framexd.setContentPane(new menu().Operaciones);
-                Main.framexd.revalidate();
+                JOptionPane.showMessageDialog(null,"Transacción cancelada");
+                Main.framebase.setContentPane(new menu().Operaciones);
+                Main.framebase.revalidate();
+            }
+        });
+        corregirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cantidadDE.setText("");
             }
         });
     }

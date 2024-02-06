@@ -91,7 +91,7 @@ public class retiros{
                 else{
                     if (cantidad<=menu.saldo){
                         menu.saldo-=cantidad;
-                        JOptionPane.showMessageDialog(null,"Operacion realizada");
+                        JOptionPane.showMessageDialog(null,"Retiro exitoso");
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"ERROR, " +
@@ -103,8 +103,9 @@ public class retiros{
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.framexd.setContentPane(new menu().Operaciones);
-                Main.framexd.revalidate();
+                JOptionPane.showMessageDialog(null,"Transacción cancelada");
+                Main.framebase.setContentPane(new menu().Operaciones);
+                Main.framebase.revalidate();
             }
         });
         corregirButton.addActionListener(new ActionListener() {
