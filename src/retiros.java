@@ -103,7 +103,6 @@ public class retiros{
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Transacción cancelada");
                 Main.framebase.setContentPane(new menu().Operaciones);
                 Main.framebase.revalidate();
             }

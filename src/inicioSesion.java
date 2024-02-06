@@ -86,15 +86,20 @@ public class inicioSesion {
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String contra = new String(pass.getPassword());
-                String password = "123";
-                if (contra.equals(password)){
-                    Main.framebase.setContentPane(new menu().Operaciones);
-                    Main.framebase.revalidate();
+                try{
+                    String contra = new String(pass.getPassword());
+                    String password = "123";
+                    if (contra.equals(password)){
+                        Main.framebase.setContentPane(new menu().Operaciones);
+                        Main.framebase.revalidate();
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Contraseña incorrecta");
+                    }
+                }catch (Exception exception){
+                    exception.printStackTrace();
                 }
-                else {
-                    JOptionPane.showMessageDialog(null,"Contraseña incorrecta");
-                }
+
             }
         });
         corregirButton.addActionListener(new ActionListener() {
